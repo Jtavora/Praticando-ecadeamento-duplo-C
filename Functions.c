@@ -18,13 +18,13 @@ void cria_lista(header *h, int num){
         x -> proxima = NULL;
         x -> anterior = NULL;
         x -> num = num;
+    }else{
+        x -> num = num;
+        x -> proxima = NULL;
+        x -> anterior = h -> ultimo;
+        h -> ultimo -> proxima = x; 
+        h -> ultimo = x;
     }
-
-    x -> num = num;
-    x -> proxima = NULL;
-    x -> anterior = h -> ultimo;
-    h -> ultimo -> proxima = x; 
-    h -> ultimo = x;
 }
 
 void retira_procurado(header *h, int proc){
